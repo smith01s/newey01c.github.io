@@ -15,7 +15,8 @@ A KPV is a *Key Point Value*. From the [FlightDataAnalyzer][fda] docs:
 
 In real terms, a KPV is an "interesting value" - usually sensor output that's
 been saved in the flight data recorder, decoded using the appropriate LFL
-definition (each aircraft has an), and then converted to "engineering units" -
+definition[^lfl] each aircraft has a standard data format which is usually
+unique to its particular model), and then converted to "engineering units" -
 standard units of measurement. Usually a KPV is recorded at a *specific point
 in the flight* (for example, during liftoff or approach/landing). However, note
 that not all KPVs are directly calculated from sensor data - some are *derived*
@@ -25,6 +26,9 @@ this is the transformation from total air temperature to static air temperature
 account for temperature changes based on friction and compression of air).
 
 [fda]: http://flightdataanalyzer.readthedocs.io/en/latest/KeyPointValue.html
+[^lfl]: An LFL is a "Logical Frame Layout" - a standard data description format
+    associated with the output of the flight data recorder for each particular
+    model or variety of aircraft.
 
 # Difficulties - Data Quality
 
@@ -55,7 +59,7 @@ the aircraft is unlikely to be pointing *towards the ground* during takeoff
 flaps, elevators, etc).
 
 ![An example of the Pitch At Liftoff KPV - note the yellow values on the
-histogram.](../images/pitch_at_liftoff.svg)
+histogram.](/images/pitch_at_liftoff.svg)
 
 This sort of process applies to many other KPVs, too - even these simple data
 quality checks can catch a surprising amount of invalid data - or highlight
@@ -96,7 +100,7 @@ aeroplanes). For examplle, note the plot below containing distributions of
 A340 - perhaps a scaling issue.
 
 ![An example of unimodal and bimodal
-distributions](../images/pitch_at_liftoff_distributions.svg)
+distributions](/images/pitch_at_liftoff_distributions.svg)
 
 In the case of the A330 and A340 above displaying clear bimodal distributions,
 it is potentially useful to apply a clustering algorithm to estimate (in an
@@ -105,7 +109,7 @@ below, mean-shift clustering has been applied - each subsequent cluster has
 been highlighted with its own colour.
 
 ![An example of mean-shift clustering applied to bimodal
-data](../images/mean_shift_clustering.svg)
+data](/images/mean_shift_clustering.svg)
 
 ## Probabilistic Filtering Methods
 
