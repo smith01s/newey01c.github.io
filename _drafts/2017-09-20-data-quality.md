@@ -4,8 +4,6 @@ layout: post
 comments: true
 ---
 
-# Difficulties
-
 One of the core difficulties with analysing flight data is that analytics is
 very far removed from the initial production and ETL of data. Before any flight
 data reaches a data scientist, it has to pass through various teams of
@@ -13,6 +11,8 @@ specialists to be converted into sensible formats for archival. This often
 leads to a case of "too many cooks" - where too many processing stages make
 any analytics very fragile, because most of the "interesting" data simply can't
 be relied upon to be accurate.
+
+<!-- more -->
 
 ## The Flight Data ETL Pipeline - A Summary
 
