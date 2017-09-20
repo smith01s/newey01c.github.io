@@ -18,7 +18,7 @@ html {
 }
 
 body {
-	background: $white;
+  background: $white;
   font: 18px/1.4 $helvetica;
   color: $darkGray;
 }
@@ -71,7 +71,7 @@ p {
 a {
   color: $blue;
   text-decoration: none;
-	cursor: pointer;
+  cursor: pointer;
   &:hover, &:active {
     color: $blue;
   }
@@ -130,8 +130,11 @@ img {
 }
 
 .date {
-  font-style: italic;
   color: $gray;
+  float: right;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: normal;
 }
 
 // Specify the color of the selection
@@ -148,12 +151,11 @@ img {
 // http://nicolasgallagher.com/micro-clearfix-hack/
 .clearfix:before,
 .clearfix:after {
-    content: " ";
-    display: table;
+  content: " ";
+  display: table;
 }
-
 .clearfix:after {
-    clear: both;
+  clear: both;
 }
 
 /*********************/
