@@ -1,39 +1,28 @@
 ---
 layout: post
-title: A Guide to Aviation Acronyms for the Bamboozled Data Scientist
+title: A Guide to Aviation Acronyms for the Bamboozled
 comments: true
 ---
 
-This post will act as a resource for some of the most commonly used (and
-confusing) acronyms used in aviation and flight safety - this is necessary
-because aviation-y types *love their acronyms*. To be fair, so do data
-scientists; but our acronyms are *better* - I mean, data science-y acronyms
-like t-SNE, MDS, SVD, and KDE are totally self-explanatory, right?
+This post will act as a reference for some of the most commonly-encountered
+acronyms used in aviation and flight safety (at least, the ones that I happen
+across regularly as a data scientist). This is necessary because aviation-y
+types *love their acronyms* and it's a bit perplexing for someone with no
+domain knowledge.
 
 <!-- more -->
 
-******
-
-| Acronym | Expansion | Notes |
-| --- | --- | --- |
-| AAL | (Altitude) Above Airfield | Height of aircraft above airfield level.
-Reference altitude for takeoff and landing. |
-| AMSL | (Altitude) Above Mean Sea Level | Height of aircraft above mean sea
-level. Reference altitude for cruise. |
+| **Acronym** | **Expansion** | **Notes** |
+|:------------|:--------------|:----------|
+| AAL | (Altitude) Above Airfield | Height of aircraft above airfield level. Reference altitude for takeoff and landing. |
+| AMSL | (Altitude) Above Mean Sea Level | Height of aircraft above mean sea level. Reference altitude for cruise. |
 | CCF | Control Column Force | |
 | GPWS | Ground Proximity Warning System | |
-| NOTAM | Notice to Airmen | A notice sent to an aviation authority warning
-pilots of potential hazards along a flight route. |
-| SAT | [Static Air Temperature][SAT] | Temperature of air outside aircraft,
-discounting kinetic energy transferred from movement. Usually derived from TAT.
-Also known as OAT (Outside Air Temperature). |
-| TAT | [Total Air Temperature][TAT] | Air temperature after being brought to
-rest by probe mounted on aircraft. Warmer than SAT due to kinetic energy being
-converted into thermal energy. |
-| TAWS | Terrain Awareness Warning System | An alert that tells pilots if the
-aircraft is below a minimum altitude. |
-| TFR | Temporary Flight Restriction | A temporarily restricted portion of
-airspace, due to hazardous conditions or special events. |
+| NOTAM | Notice to Airmen | A notice sent to an aviation authority warning pilots of potential hazards along a flight route. |
+| SAT | [Static Air Temperature][SAT] | Temperature of air outside aircraft, discounting kinetic energy transferred from movement. Usually derived from TAT. Also known as OAT (Outside Air Temperature). |
+| TAT | [Total Air Temperature][TAT] | Air temperature after being brought to rest by probe mounted on aircraft. Warmer than SAT due to kinetic energy being converted into thermal energy. |
+| TAWS | Terrain Awareness Warning System | An alert that tells pilots if the aircraft is below a minimum altitude. |
+| TFR | Temporary Flight Restriction | A temporarily restricted portion of airspace, due to hazardous conditions or special events. |
 
 ## Height, Altitude, or Elevation?
 
