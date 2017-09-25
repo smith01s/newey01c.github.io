@@ -41,7 +41,7 @@ tr {
   border-top: 1px solid #C1C3D1;
   border-bottom-: 1px solid #C1C3D1;
   color: #666B85;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: normal;
   text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
 }
@@ -54,7 +54,7 @@ tr:last-child {
   border-bottom: none;
 }
 
-tr:nth-child(odd) td {
+tr:nth-child(odd) td:not(.gutter):not(.gl):not(.code) {
   background: #EBEBEB;
 }
 
@@ -67,7 +67,6 @@ tr:last-child td:last-child {
 }
 
 td {
-  background: #FFFFFF;
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 5px;
