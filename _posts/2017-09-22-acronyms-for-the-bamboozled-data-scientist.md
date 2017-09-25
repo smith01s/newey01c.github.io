@@ -24,6 +24,7 @@ domain knowledge.
 | TAT         | [Total Air Temperature][TAT]     | Air temperature after being brought to rest by probe mounted on aircraft. Warmer than SAT due to kinetic energy being converted into thermal energy.              |
 | TAWS        | Terrain Awareness Warning System | An alert that tells pilots if the aircraft is below a minimum altitude.                                                                                           |
 | TFR         | Temporary Flight Restriction     | A temporarily restricted portion of airspace, due to hazardous conditions or special events.                                                                      |
+| TOGA        | Takeoff/Go-around switch         | Autopilot setting - throttle mode switch. Takeoff mode used to spin up engines to correct power on takeoff, go-around mode is for approach.                       |
 |-------------+----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 ## Height, Altitude, or Elevation?
