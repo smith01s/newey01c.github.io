@@ -12,17 +12,19 @@ domain knowledge.
 
 <!-- more -->
 
-| **Acronym** | **Expansion** | **Notes** |
-|:------------|:--------------|:----------|
-| AAL | (Altitude) Above Airfield | Height of aircraft above airfield level. Reference altitude for takeoff and landing. |
-| AMSL | (Altitude) Above Mean Sea Level | Height of aircraft above mean sea level. Reference altitude for cruise. |
-| CCF | Control Column Force | |
-| GPWS | Ground Proximity Warning System | |
-| NOTAM | Notice to Airmen | A notice sent to an aviation authority warning pilots of potential hazards along a flight route. |
-| SAT | [Static Air Temperature][SAT] | Temperature of air outside aircraft, discounting kinetic energy transferred from movement. Usually derived from TAT. Also known as OAT (Outside Air Temperature). |
-| TAT | [Total Air Temperature][TAT] | Air temperature after being brought to rest by probe mounted on aircraft. Warmer than SAT due to kinetic energy being converted into thermal energy. |
-| TAWS | Terrain Awareness Warning System | An alert that tells pilots if the aircraft is below a minimum altitude. |
-| TFR | Temporary Flight Restriction | A temporarily restricted portion of airspace, due to hazardous conditions or special events. |
+|-------------+----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Acronym** | **Expansion**                    | **Notes**                                                                                                                                                         |
+|-------------+----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| AAL         | (Altitude) Above Airfield Level  | Height of aircraft above airfield level. Reference altitude for takeoff and landing.                                                                              |
+| AMSL        | (Altitude) Above Mean Sea Level  | Height of aircraft above mean sea level. Reference altitude for cruise.                                                                                           |
+| CCF         | Control Column Force             | Force exerted on the control column (pitch/roll controls, etc)                                                                                                    |
+| GPWS        | Ground Proximity Warning System  | A specific type of TAWS designed to alert pilots if they are approaching the ground.                                                                              |
+| NOTAM       | Notice to Airmen                 | A notice sent to an aviation authority warning pilots of potential hazards along a flight route.                                                                  |
+| SAT         | [Static Air Temperature][SAT]    | Temperature of air outside aircraft, discounting kinetic energy transferred from movement. Usually derived from TAT. Also known as OAT (Outside Air Temperature). |
+| TAT         | [Total Air Temperature][TAT]     | Air temperature after being brought to rest by probe mounted on aircraft. Warmer than SAT due to kinetic energy being converted into thermal energy.              |
+| TAWS        | Terrain Awareness Warning System | An alert that tells pilots if the aircraft is below a minimum altitude.                                                                                           |
+| TFR         | Temporary Flight Restriction     | A temporarily restricted portion of airspace, due to hazardous conditions or special events.                                                                      |
+|-------------+----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 ## Height, Altitude, or Elevation?
 
