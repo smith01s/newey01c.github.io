@@ -1,5 +1,5 @@
 ---
-title: Rendering and Saving Decision Trees in Jupyter Notebook
+title: Rendering Decision Trees in Jupyter Notebook
 layout: post
 ---
 
