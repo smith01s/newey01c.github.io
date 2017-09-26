@@ -19,7 +19,7 @@ comments:
     domain: "PfAFACp7Vce2yPsogNL/4M2XUgGf/gnnhVSR7PU7kZBVJIXh4nNd+ANWPDMCBIF9AOsbxQf5cMxjPGD6MmxlcF1YYTbKXLSapY7LBip/pcL+K/lDOOQRkhhDJXFlnW4a3SIIKPx2Dh0RlK+DN9jVRljt9nNViXkIfnzYTIr3pOs="
   # Destination path (directory) for the data files. Accepts placeholders.
   path: "_comments/{options.slug}"
-  requiredFields: ["name", "email", "message", "hidden"]
+  requiredFields: []
   transforms:
   reCaptcha:
     enabled: false
