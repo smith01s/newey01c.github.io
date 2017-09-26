@@ -2,7 +2,7 @@ comments:
   allowedFields: ["name", "email", "message", "hidden", "replying-to"]
   branch: "master"
   commitMessage: "Staticman added a comment!"
-  filename: "entry{@timestamp}"
+  filename: "{@timestamp}"
   format: "yml"
   generatedFields:
     date:
@@ -21,6 +21,6 @@ comments:
   path: "_comments/{options.slug}"
   requiredFields: []
   transforms:
-  reCaptcha:
-    enabled: false
-    email: "md5"
+    reCaptcha:
+      enabled: false
+      email: "md5"
