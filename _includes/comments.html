@@ -38,11 +38,13 @@
         <fieldset class="pure-group">
           <input type="text" id="comment-form-name" class="pure-input-1" name="fields[name]" spellcheck="false" placeholder="name" />
           <input type="email" id="comment-form-email" class="pure-input-1" name="fields[email]" spellcheck="false" placeholder="email (for gravatar and replies)" />
+          <input type="url" id="comment-form-email" class="pure-input-1" name="fields[url]" spellcheck="false" placeholder="url (optional)" />
         </fieldset>
         <fieldset>
           <textarea type="text" rows="6" id="comment-form-message" class="pure-input-1" name="fields[message]" spellcheck="true" placeholder="your comment..."></textarea>
         </fieldset>
         <fieldset class="hidden" style="display:none;">
+          <input type="hidden" name="options[redirect]" value="{{ page.url | absolute_url }}">
           <input type="hidden" name="options[origin]" value="{{ page.url | absolute_url }}">
           <input type="hidden" id="comment-parent" name="options[parent]" value="">
           <input type="hidden" id="comment-post-id" name="options[slug]" value="{{ page.slug }}">
