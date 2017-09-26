@@ -11,7 +11,6 @@
           {% endif %}
           Comments
         </h2>
-        {{ site.data.comments[page.slug] | inspect }}
         {% assign comments = site.data.comments[page.slug] | where_exp:"item","item._parent == nil" %}
         {% for comment in comments %}
           {% assign index   = forloop.index %}
