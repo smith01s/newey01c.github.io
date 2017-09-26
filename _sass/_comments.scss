@@ -1,7 +1,10 @@
 .small {
-  margin-top: -1em;
   margin-bottom: 0.0em;
   font-size: 0.75em;
+}
+
+.comments {
+  padding-top: 1.5em;
 }
 
 .comment, ul .comment, ul ul .comment {
@@ -29,6 +32,8 @@
   -ms-transition: all 0.4s linear;
   -o-transition: all 0.4s linear;
   transition: all 0.4s linear;
+  width: 60px;
+  height: 60px;
 }
 
 .comment .avatar a:hover img {
@@ -44,7 +49,7 @@
 .comment .comment-content header {
   font-size: 1.2em;
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 0.5em;
 }
 
 .comment .comment-content header .pubdate {
@@ -53,13 +58,4 @@
 
 .comment .comment-content header .userlink {
   font-weight: bold;
-}
-
-.comment .replies {
-  margin-bottom: 7px;
-}
-
-.respond {
-  margin-top: 2em;
-  border-top: 1px solid #eee;
 }
