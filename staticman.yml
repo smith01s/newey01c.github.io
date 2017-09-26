@@ -1,4 +1,4 @@
-comments:
+_comments:
   allowedFields: ["name", "email", "url", "message"]
   branch: "master"
   commitMessage: "Staticman added a comment!"
