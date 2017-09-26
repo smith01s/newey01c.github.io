@@ -1,10 +1,10 @@
 {% if site.comments %}
 <script type="text/javascript" src="/assets/comments.js"></script>
-<section class="page__reactions">
+<section class="comments-section">
   {% if site.repository and site.branch %}
     {% if site.data.comments[page.slug] %}
       <!-- Start static comments -->
-      <div id="comments" class="js-comments">
+      <ul id="comments-list" class="comments">
         <h2 class="page__section-label">
           {% if site.data.comments[page.slug].size > 0 %}
             {{ site.data.comments[page.slug] | size }}
@@ -24,15 +24,15 @@
           {% assign message = comment.message %}
           {% include comment.html index=index parent=parent avatar=avatar email=email name=name url=url date=date message=message %}
         {% endfor %}
-      </div>
+      </ul>
       <!-- End static comments -->
     {% endif %}
 
     {% unless page.comments_locked == true %}
     <!-- Start new comment form -->
     <div id="respond">
-      <h2>Leave a Comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="{{ page.url | absolute_url }}#respond" style="display:none;">Cancel reply</a></small></h2>
-      <p class="instruct"><a href="https://daringfireball.net/projects/markdown/syntax">Markdown</a> is allowed. Email addresses will not be published.</p>
+      <h2 class="respond">Leave a Comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="{{ page.url | absolute_url }}#respond" style="display:none;">Cancel reply</a></small></h2>
+      <p class="small instruct"><a href="https://daringfireball.net/projects/markdown/syntax">Markdown</a> is allowed. Email addresses will not be published.</p>
       <form id="comment-form" class="pure-form" method="post" action="https://api.staticman.net/v2/entry/{{ site.repository }}/{{ site.branch }}/comments">
         <fieldset class="pure-group">
           <input type="text" id="comment-form-name" class="pure-input-1" name="fields[name]" spellcheck="false" placeholder="name" />
