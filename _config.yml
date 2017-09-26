@@ -3,24 +3,25 @@ description: Notes on analytics and machine learning techniques for flight data.
 avatar: https://avatars3.githubusercontent.com/u/29257724?v=4&s=460
 
 footer-links:
-  dribbble:
   email: charlie.newey@flightdataservices.com
-  facebook:
   flickr:
-  github: newey01c/newey01c.github.io
+  github: newey01c
   instagram:
   linkedin:
-  pinterest:
   rss: yes # just type anything here for a working RSS icon
   twitter:
   stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
   youtube: # channel/<your_long_string> or user/<user-name>
   googleplus: # anything in your profile username that comes after plus.google.com/
 
-disqus: flightdatascrapbook
 google_analytics: # e.g. UA-2110908-2
 url: https://fds.newey.me
 excerpt_separator: "<!-- more -->"
+
+# Staticman comments config
+comments: true
+repository: newey01c/newey01c.github.io
+branch: master
 
 # If you're hosting your site at a Project repository on GitHub pages
 # (http://yourusername.github.io/repository-name)
@@ -30,35 +31,22 @@ baseurl: ""
 
 # !! You don't need to change any of the configuration flags below !!
 permalink: /:year/:month/:day/:slug/
-
-# The release of Jekyll Now that you're using
 version: v1.2.0
-
-# Jekyll 3 now only supports Kramdown for Markdown
 kramdown:
-  # Use GitHub flavored markdown, including triple backtick fenced code blocks
   input: GFM
-  # Jekyll 3 and GitHub Pages now only support rouge for syntax highlighting
   syntax_highlighter: rouge
   syntax_highlighter_opts:
-    # Use existing pygments syntax highlighting css
     css_class: 'highlight'
     span:
       line_numbers: false
     block:
       line_numbers: true
       start_line: 1
-
-# Set the Sass partials directory, as we're using @imports
 sass:
-  style: :compressed # You might prefer to minify using :compressed
-
-# Use the following plug-ins
+  style: :compressed
 plugins:
   - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
   - jekyll-feed    # Create an Atom feed using the official Jekyll feed gem
-
-# Exclude these files from your production _site
 exclude:
   - Gemfile
   - Gemfile.lock
