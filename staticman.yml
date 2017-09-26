@@ -9,7 +9,7 @@ comments:
       type: date
       options:
         format: "timestamp-seconds"
-  moderation: true
+  moderation: false
   name: "Flight Data Scrapbook"
   notifications:
     enabled: true
