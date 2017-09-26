@@ -1,0 +1,26 @@
+comments:
+  allowedFields: ["name", "email", "url", "message"]
+  branch: "master"
+  commitMessage: "Staticman added a comment!"
+  filename: "entry{@timestamp}"
+  format: "yml"
+  generatedFields:
+    date:
+      type: date
+      options:
+        format: "timestamp-seconds"
+  moderation: true
+  name: "Flight Data Scrapbook"
+  notifications:
+    enabled: true
+    # Mailgun API key
+    apiKey: "SPSAgWC0Ea1p3L4hIbO5weEiYSIfsbBv/0iPRtYSCOn/BqLsctZHj4KbmrcGsEqkTvNYi7Hs1z9gn2hCpHl6Fw6/4tnbYPcjf6k2Yr72CGASsNWlp6WTiRYcGFPBtKxY43MQ5Uu8O49c22S5VOV0KNJqtkRTNFl74pRE4JHllGM="
+    # Mailgun domain (encrypted)
+    domain: "PfAFACp7Vce2yPsogNL/4M2XUgGf/gnnhVSR7PU7kZBVJIXh4nNd+ANWPDMCBIF9AOsbxQf5cMxjPGD6MmxlcF1YYTbKXLSapY7LBip/pcL+K/lDOOQRkhhDJXFlnW4a3SIIKPx2Dh0RlK+DN9jVRljt9nNViXkIfnzYTIr3pOs="
+  # Destination path (directory) for the data files. Accepts placeholders.
+  path: "_comments/{options.slug}"
+  requiredFields: ["name", "email", "message"]
+  transforms:
+  reCaptcha:
+    enabled: false
+    email: "md5"
