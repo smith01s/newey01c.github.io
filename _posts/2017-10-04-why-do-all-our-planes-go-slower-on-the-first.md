@@ -18,10 +18,6 @@ month*. How frustrating.
 
 <!-- more -->
 
-[^1]: We call these "KPVs" for short - essentially sensor values recorded at a
-      specific point in a flight)
-
-
 ## Data Quality
 
 Quality issues are very common with the sort of data that we deal with at
@@ -65,3 +61,6 @@ was trying to investigate. Once I had figured out a way to exclude these, the
 data looked much more sensible.
 
 Mystery solved.
+
+[^1]: We call these "KPVs" for short - essentially sensor values recorded at a
+      specific point in a flight)
