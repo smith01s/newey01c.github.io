@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Why do aircraft take off more slowly on the first day of the month?
+title: Why do our aircraft take off slowly on the first of the month?
 comments: true
 ---
 
