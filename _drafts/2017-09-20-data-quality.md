@@ -1,5 +1,5 @@
 ---
-title: On Quality Issues with Flight Data
+title: On Data Quality in Flight Data Analytics
 layout: post
 comments: true
 ---
@@ -95,8 +95,57 @@ parameters (for example, ground speeds can register at 600 knots if the
 aircraft thinks that the landing gear is down during cruise!).
 
 As aircraft are extremely complex feats of engineering, a single aircraft can
-contain thousands of sensors - often recording *thousands of parameters* for
-each flight. In terms of sheer pr
+contain tens of thousands of sensors - and often record *several thousand
+parameters* for each flight. This is likely to cause problems, as --- simply
+due to the law of large numbers --- even if 99.9% of sensors are being recorded
+correctly --- generally *something* will still be reporting incorrect values.
+It is part of our job as data scientists to figure out where this invalid data
+is hiding, and take action to ensure that none of the analysts or airlines draw
+false conclusions from garbage data.
 
 
-### Solution: Imputation and Sensor Fusion
+### Solution: Masking, Imputation and Sensor Fusion
+
+This action can take various different forms; the simplest being just marking a
+particular stream of data as invalid. This is particularly helpful if there are
+recorded time-series parameters with gaps in signal or random data spikes, but
+in other cases (e.g. excessive random noise), there are other approaches we
+might want to take so that we don't trigger events unnecessarily.
+
+In most cases, fixing or imputing noisy data simply requires an application of
+some smoothing techniques (moving averages and so on). However, this doesn't
+necessarily work in where the data are missing altogether --- in this sort of
+situation, there are a few viable options; one is masking the missing data out
+(i.e. adding a placeholder "fill value" that makes it explicitly clear that the
+data are missing), and another is imputation based on machine learning or
+statistics. This can often be done with Kalman filters and the expectation
+maximisation (EM) algorithm, or with some more specialised techniques like
+autoregression/ARMA models.
+
+Another option (and arguably, the best of all) is to use knowledge of
+correlated parameters to infer what the missing data *could* look like. For
+example, a good indicator of an increase in nose pitch might be normal G (i.e.
+"upwards" acceleration on the aircraft) --- and likewise, a good indicator of
+airspeed might be engine N1 and altitude. Combining a number of correlated
+parameters into an estimator for missing data can theoretically produce a very
+powerful model for imputing data.
+
+However, the ability to impute realistic and sensible-looking data raises a
+number of questions. While we *might* be able to take an educated guess about
+what some missing data should look like, this is unlikely to be an exact
+analogue of the conditions that the aircraft is operating in. We might be able
+to take a good guess at a missing airspeed value for 10 seconds (or perhaps
+even 10 minutes), but there's a reasonable chance that our imputation will be
+wrong --- particularly if the missing data occurred while the aircraft was
+operating outside of normal conditions. It must be made very clear then, that
+conclusions about air safety policy, standard operating procedures, etc,
+shouldn't be made based on artificially-created data that *simply didn't exist
+in the first place*.
+
+
+# Summary
+
+Whew, that was wordy! I hope you managed to stay awake all the way to the end
+--- and I hope that you now have a reasonable understanding of some of the
+quality problems that we experience in flight data analysis. If I've learned
+one thing so far since working at Flight Data Services: it's *never* simple.
