@@ -8,13 +8,13 @@ One of the core difficulties with analysing flight data is that analytics is
 very far removed from the initial production and ETL of data. Before any flight
 data reaches a data scientist, it has to pass through various teams of
 specialists to be converted into sensible formats for archival. This often
-leads to a case of "too many cooks" - where too many processing stages make
+leads to a case of "too many cooks" --- where too many processing stages make
 any analytics very fragile, because most of the "interesting" data simply can't
 be relied upon to be accurate.
 
 <!-- more -->
 
-## The Flight Data ETL Pipeline - A Summary
+## The Flight Data ETL Pipeline --- A Summary
 
 * Flight data is recorded from aircraft in-situ, using hardware that interfaces
   with the Flight Data Recorder (FDR).
@@ -38,7 +38,7 @@ be relied upon to be accurate.
 ### Conversion Errors
 
 Typically, errors are introduced in the conversion from the data frame (i.e.
-data from the flight data recorder) to engineering units - but this is by no
+data from the flight data recorder) to engineering units --- but this is by no
 means the *only* source of error. There is a myriad of different ways that
 errors can be introduced, but a key point is when sensor data is encoded and
 sent to the flight data recorder. This encoding process is often done in
@@ -50,28 +50,39 @@ encoding/decoding of sensor data.
 
 This effect is exacerbated because most "interesting" data revolves around
 looking into extreme values. That is, event detection systems are mostly
-interested in particularly high or low values - as these usually indicate
+interested in particularly high or low values --- as these usually indicate
 something abnormal on a particular flight. Unfortunately, these data encoding
 problems often generate signal artefacts that look like events (to an automated
-system, at least) - making our job much harder. For example, a momentary break
-in a signal for an airspeed sensor would look like a complete loss of speed to
-an automated system - and this is why we need analysts!
+system, at least) --- making our job much harder. For example, a momentary
+break in a signal for an airspeed sensor would look like a complete loss of
+speed to an automated system --- and this is why we need analysts!
 
 #### Solution: Descriptive Statistics, Exploratory Analytics
+
+As automated verification techniques go, you can't get more tried and tested
+than descriptive statistics. One of the things that we're lucky enough to have
+in the world of aviation is a wealth of historical data --- going back decades.
+Because of this, we're able to characterise sensible ranges and distributions
+for loads of various different types of data --- meaning that we're able to
+quickly get a rough idea of whether data is valid or not. Once we have a
+realistic idea of means, standard deviations, and a characterisation of
+distribution (i.e. Gaussian, in most cases), we can apply various statistical
+tests to detect outliers --- and investigate data points which are essentially
+impossible.
 
 
 ### Data Acquisition Unit (DAQ) Errors
 
 Another common source of problems is from hardware issues relating to the
 physical limits on some of the recording devices. Some older systems, for
-example, record flight data onto optical media (i.e. CDs or DVDs) - optical
+example, record flight data onto optical media (i.e. CDs or DVDs) --- optical
 media are great for long-term data storage and archival, but unfortunately
 aren't great for robust data recording. As well as being susceptible to
 tracking problems when encountering corrupted sectors on disks, occasionally
 flights that experience large amounts of turbulence will actually cause the
-rotating optical platter to jog and skip - meaning that the recording unit will
-jump over some sectors on the disk. This can cause various problems, including
-duplicated data, corrupt sectors, and substantial gaps in recordings.
+rotating optical platter to jog and skip --- meaning that the recording unit
+will jump over some sectors on the disk. This can cause various problems,
+including duplicated data, corrupt sectors, and substantial gaps in recordings.
 
 #### Solution: Break Detection
 
@@ -79,7 +90,7 @@ duplicated data, corrupt sectors, and substantial gaps in recordings.
 ### Sensor Errors
 
 Another place that errors can be introduced is simply through faulty sensors.
-Certain varieties of sensor can cause more problems than others - for example,
+Certain varieties of sensor can cause more problems than others --- for example,
 a faulty airspeed sensor (an analogue sensor that records speed values in
 knots) might yield nonsense or occasionally exhibit short data spikes. These
 spikes may trigger *some* spurious events, but this doesn't usually pose a huge
@@ -95,7 +106,7 @@ parameters (for example, ground speeds can register at 600 knots if the
 aircraft thinks that the landing gear is down during cruise!).
 
 As aircraft are extremely complex feats of engineering, a single aircraft can
-contain tens of thousands of sensors - and often record *several thousand
+contain tens of thousands of sensors --- and often record *several thousand
 parameters* for each flight. This is likely to cause problems, as --- simply
 due to the law of large numbers --- even if 99.9% of sensors are being recorded
 correctly --- generally *something* will still be reporting incorrect values.
@@ -146,6 +157,6 @@ in the first place*.
 # Summary
 
 Whew, that was wordy! I hope you managed to stay awake all the way to the end
---- and I hope that you now have a reasonable understanding of some of the
-quality problems that we experience in flight data analysis. If I've learned
-one thing so far since working at Flight Data Services: it's *never* simple.
+--- and I hope that you now have a better understanding of some of the quality
+problems that we experience in flight data analysis. If I've learned one thing
+so far since working at Flight Data Services: it's *never* simple.
