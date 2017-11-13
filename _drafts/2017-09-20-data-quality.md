@@ -84,7 +84,56 @@ rotating optical platter to jog and skip --- meaning that the recording unit
 will jump over some sectors on the disk. This can cause various problems,
 including duplicated data, corrupt sectors, and substantial gaps in recordings.
 
-#### Solution: Break Detection
+#### Solution: Break Detection and Sensor Fusion
+
+There are various approaches to tackling DAQ errors; some simple, and some less
+so. The software that we use to analyse flights handles faulty DAQs in the
+majority of cases, because the errors generally fall into one of a few
+categories;
+
+* Duplicated sectors --- this happens when a sector is *written to disk*, but
+  then for some reason reports an error. This error causes the DAQ unit to
+  repeat a sector write without invalidating the previous (errored) sector.
+  Luckily, this is easy to detect as the duplicated data is literally just
+  repeated verbatim.
+* Skipped sectors, but resumed recording --- this happens if the aircraft goes
+  through a bump, essentially - the optical disk skips, and the recording unit
+  just "jumps" over the next sector on the disk. This causes a blank sector to
+  be left in the recording, but again, these are easy to detect and remove ---
+  as the recording essentially continues as if nothing happened (i.e. there is
+  no loss of continuity in the data).
+* Missing sectors --- this is the most problematic kind of break error in DAQ
+  data, as what essentially happens (for a wide variety of reasons) is that the
+  recording unit skips a disk sector (or writes junk data), but then doesn't
+  detect that this has happened, and therefore doesn't write a sector's worth
+  of data. This essentially means that there's not only a break in the
+  recording, but also there is missing *data* --- we can't compensate for this,
+  or extract from subsequent sectors. There are algorithms to *detect* these
+  phenomena, but it isn't possible to impute the data perfectly.
+
+I'm going to focus on the last bulletpoint as this poses the most difficult
+problem. It's possible to *detect* gaps in data by using heuristics
+(essentially, "rules of thumb") --- and then these gaps can simply be applied
+to the data in the form of a mask. That is, we simply render the data as
+"unavailable", but we still include a missing segment of time-series data on
+plots. A much more interesting approach to solving this problem is a technique
+called *sensor fusion*.
+
+This is quite a broad term, and as such it covers quite a wide range of
+techniques --- some based in more traditional engineering applications (i.e.
+Kalman filters), and others based in more modern machine learning literature
+(i.e. neural networks, support vector machines and suchlike), but what it
+essentially boils down to is using *correlated parameters* to work out what a
+missing parameter *might* look like. For example, if an airspeed sensor signal
+is missing, it might be possible to use some of these machine learning
+techniques to *guess* what the speed *might* look like --- based on the output
+of other parameters such as altitude, air pressure, engine N1 (essentially
+engine power output), and plenty of others. The relationship between these
+parameters should (theoretically) allow us to reconstruct the missing signal.
+
+Obviously, this is far from a perfect process, and it doesn't necessarily
+reflect what was *actually* happening on the flight deck --- but the idea is
+simply to give an educated guess as to *what might be going on*.
 
 
 ### Sensor Errors
@@ -156,7 +205,9 @@ in the first place*.
 
 # Summary
 
-Whew, that was wordy! I hope you managed to stay awake all the way to the end
---- and I hope that you now have a better understanding of some of the quality
-problems that we experience in flight data analysis. If I've learned one thing
-so far since working at Flight Data Services: it's *never* simple.
+Whew, that was long. I hope you managed to stay all the way to the end --- and
+I hope that you now have a better understanding of some of the quality problems
+that we experience in flight data analysis!
+
+If I've learned one thing so far since working at Flight Data Services: it's
+*never* simple.
