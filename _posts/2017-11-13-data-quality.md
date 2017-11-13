@@ -16,6 +16,10 @@ be relied upon to be accurate.
 
 ## The Flight Data ETL Pipeline --- A Summary
 
+Before we get started, I'll briefly summarise the most important steps that our
+flight data will pass through before it reaches us ("us" being "the data
+scientists")
+
 * Flight data is recorded from aircraft in-situ, using hardware that interfaces
   with the Flight Data Recorder (FDR).
 * After each flight, data is downloaded from the secondary FDR, and sent via
@@ -27,19 +31,38 @@ be relied upon to be accurate.
   proprietary) binary data format. The FDR data downloaded earlier is passed
   onto a team of specialists that use a data schematic called a Logical Frame
   Layout (LFL) to convert the raw binary data into a sensible, interchangeable
-  data format (usually something like HDF5). This is difficult because most
-  aircraft model use a slightly different data specification, and the
-  specifications are given to the specialists by the aircraft manufacturer.
-  Unfortunately, these specifications aren't always *correctly written by the
-  manufacturer*.
+  data format (usually something like HDF5)[^1].
+* After this, data goes through some rudimentary error checking --- e.g.
+  correlation tests, various signal error checking algorithms, and so on. This
+  is less about validating the *data*, and more about validating the *signal*.
+* The data is now in its final processed form, and the time-series data that is
+  created by the end of this pipeline is what we commonly work with in the data
+  science department. The analysts (and our statisticians) will typically use a
+  slightly more high-level form of the data discussed below.
+* The final data products that get generated are various statistics called "Key
+  Point Values" --- these are used as "snapshots" of the state of an aircraft
+  during a specific point in time during a flight. Our analysts, statisticians,
+  and customers will primarily be working with this type of data.
+
+[^1]: This is difficult because most aircraft models use a slightly different
+      data compression scheme, and the specifications for these are given to a
+      team of specialists here at FDS. These specifications are provided by the
+      aircraft manufacturer, and unfortunately for us, these specifications are
+      often several hundred pages long, and haven't always been *correctly
+      written*.
+
 
 ## Sources of Error
+
+Now that you know where our data comes from (and hopefully you have an idea for
+what some of it looks like!), let's take a short dive into the types of
+problems that commonly arise in the data when it's time to analyse it.
 
 ### Conversion Errors
 
 Typically, errors are introduced in the conversion from the data frame (i.e.
 data from the flight data recorder) to engineering units --- but this is by no
-means the *only* source of error. There is a myriad of different ways that
+means the *only* source of error. There are a myriad of different ways that
 errors can be introduced, but a key point is when sensor data is encoded and
 sent to the flight data recorder. This encoding process is often done in
 non-standard ways, and these aren't always correctly documented by the aircraft
@@ -209,5 +232,5 @@ Whew, that was long. I hope you managed to stay all the way to the end --- and
 I hope that you now have a better understanding of some of the quality problems
 that we experience in flight data analysis!
 
-If I've learned one thing so far since working at Flight Data Services: it's
-*never* simple.
+If I've learned one thing so far since working at Flight Data Services: working
+with this kind of complex engineering data is *never* simple.
