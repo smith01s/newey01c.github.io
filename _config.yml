@@ -2,6 +2,8 @@ name: Flight Data Scrapbook
 description: Notes on analytics and machine learning techniques for flight data.
 avatar: https://avatars3.githubusercontent.com/u/29257724?v=4&s=460
 
+comments: true
+
 footer-links:
   email: charlie.newey@flightdataservices.com
   flickr:
