@@ -15,13 +15,8 @@ footer-links:
   googleplus: # anything in your profile username that comes after plus.google.com/
 
 google_analytics: # e.g. UA-2110908-2
-url: https://fds.newey.me
+url: https://newey01c.github.io
 excerpt_separator: "<!-- more -->"
-
-# Staticman comments config
-comments: true
-repository: newey01c/newey01c.github.io
-branch: master
 
 # If you're hosting your site at a Project repository on GitHub pages
 # (http://yourusername.github.io/repository-name)
