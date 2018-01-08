@@ -24,6 +24,11 @@ with a *very low tolerance* for deviation or error. The point of doing this is
 to flag up as many potential safety problems as possible, and thus to hopefully
 catch all genuine safety events.
 
+![A man floating in the air in a grocery shop](/images/shopping_flying.jpg)
+<p style="font-size: 12px; text-align: center;">This chap has the right idea -
+but he's a bit too close to the ground. Someone's going to have to talk to him
+about his TAWS alerts.</p>
+
 The problem is that setting these thresholds at such low values causes a
 considerable number of false positives (i.e. invalid events) --- and for each
 event that gets generated, a trained human (i.e. an analyst) has to manually
@@ -102,18 +107,7 @@ FDS can use to explore events that they've invalidated during the last few
 months.
 
 So that's the link between shopping baskets and safety events --- some snazzy
-data mining algorithms! Just for fun, let's have a quick overview of some of
-the basic concepts in market basket analysis.
+data mining algorithms. In my next post, I'll cover these concepts in a little
+bit more detail. Until next time!
 
 [gh]: https://github.com/FlightDataServices/carmine
-
-
-## The (slightly) technical bit
-
-### Confidence
-
-### Support
-
-### Lift
-
-
