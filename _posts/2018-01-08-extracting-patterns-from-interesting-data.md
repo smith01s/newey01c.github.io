@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The link between safety events and shopping baskets
+title: Safety Events and Shopping Baskets
 comments: true
 ---
 
