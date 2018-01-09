@@ -18,11 +18,11 @@ issues).
 
 <!-- more -->
 
-So, what's the point of this post? Well, as a company, we're interested in
-generating as many events as possible --- that is, we set our event thresholds
-with a *very low tolerance* for deviation or error. The point of doing this is
-to flag up as many potential safety problems as possible, and thus to hopefully
-catch all genuine safety events.
+So, what's the point of this post? Well, any safety organisation would like to
+flag up as many potential safety problems as possible, to avoid the risk of
+overlooking something. It's common for operators to set event thresholds low
+and generate as many events as possible, in the hope of catching all genuine
+safety events.
 
 ![A man floating in the air in a grocery shop](/images/shopping_flying.jpg)
 <p style="font-size: 12px; text-align: center;">This chap has the right idea -
