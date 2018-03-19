@@ -176,9 +176,9 @@ plt.axhline(ub)
 
 Tolerance intervals are a very powerful statistical tool for creating
 "set-and-forget" thresholds for performing rudimentary anomaly detection on
-certain types of statistical data. There are some great resources on these
-statistical concepts[^2][^3][^4], so if my explanation falls a little bit short
-(and it almost certainly does), I'd check those out.
+certain types of numerical data. There are some great resources on these
+statistical concepts[^2][^3][^4] (and I've only scraped the surface), so if my
+explanation falls a little bit short, I'd check those out too.
 
 
 # References and Footnotes
