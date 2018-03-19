@@ -117,7 +117,7 @@ now need to consider *two* probability distributions; the Gaussian (as before),
 and the Chi-squared distribution as well. In short, the Chi-squared
 distribution (with $n$ degrees of freedom, where $n$ is the number of data
 points in a sample) shows the probability distribution of the sum of squares of
-individual data points. The tolerance interva $t_i$ can be approximated as
+individual data points. The tolerance interval $t_i$ can be approximated as
 follows, where $n$ is the degrees of freedom, $z \frac{1 - p}{2}$ is the
 required *confidence level*, and $\gamma$ is the proportion of data that will
 lie within the interval $t_i$;
