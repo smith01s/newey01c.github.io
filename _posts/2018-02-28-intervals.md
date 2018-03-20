@@ -119,8 +119,9 @@ distribution (with $n$ degrees of freedom, where $n$ is the number of data
 points in a sample) shows the probability distribution of the sum of squares of
 individual data points. The tolerance interval $t_i$ can be approximated as
 follows, where $n$ is the degrees of freedom, $z \frac{1 - p}{2}$ is the
-proportion of the data to sit within the interval $t_i$, and $\gamma$ is the
-probabilistic confidence for the interval;
+critical value of the Gaussian distribution, taken at the value of the
+*proportion* of the data within the interval $t_i$, and $\gamma$ is the
+confidence level;
 
 $$ t_i = \sqrt{\frac{n \left(1 + \frac{1}{N}\right)
 z^2_{\frac{1-p}{2}}}{\chi^2_{1-\gamma, \, n}}} $$
